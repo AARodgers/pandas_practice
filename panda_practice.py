@@ -45,7 +45,13 @@ for i in range(len(data)):
 #make new bmi column in df
 data["bmi"] =  bmi
 
-# save dataframe to a file
-data.to_csv("bmi.csv")
+# save dataframe to a file, this will create a comma delimited file
+#data.to_csv("bmi.csv")
+
+# if you want to create file delimited with tabs
+#data.to_csv("bmi.csv", sep="\t")
+
+# to save as text file
+data.to_csv("bmi.txt", sep="\t")
 
 print(data)
