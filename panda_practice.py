@@ -49,9 +49,9 @@ data["bmi"] =  bmi
 #data.to_csv("bmi.csv")
 
 # if you want to create file delimited with tabs
-#data.to_csv("bmi.csv", sep="\t")
+data.to_csv("bmi.csv", index=False, sep="\t")
 
 # to save as text file
-data.to_csv("bmi.txt", sep="\t")
+#data.to_csv("bmi.txt", sep="\t")
 
 print(data)
