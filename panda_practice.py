@@ -44,4 +44,8 @@ for i in range(len(data)):
     bmi.append(bmi_score)
 #make new bmi column in df
 data["bmi"] =  bmi
+
+# save dataframe to a file
+data.to_csv("bmi.csv")
+
 print(data)
