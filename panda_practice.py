@@ -33,3 +33,15 @@ batman_info = data.iloc[1]
 # if you want to get the weight from the row data
 batman_info = data.iloc[1]["weight"]
 print(batman_info)
+
+# manipulate data
+# add a column that calculates the bmi of each name
+bmi = []
+# bmi = kg/(m**2)
+# use for loop
+for i in range(len(data)):
+    bmi_score = data["weight"][i]/(data["height"][i]**2)
+    bmi.append(bmi_score)
+#make new bmi column in df
+data["bmi"] =  bmi
+print(data)
