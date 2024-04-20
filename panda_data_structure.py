@@ -143,4 +143,29 @@ arr.mean(axis=1)
 # returns array([2., 5.])
 # average of first row(x) and average of second row(y)
 
+# operations between array and scalar ( the scalar is broadcasted to each element of array
+arr = np.array([1, 2, 3])
+b = 2
+arr * b
+# returns array([2, 4, 6])
+
+# exopnentiation btwn array and scalar
+a = [[1, 2, 3], [4, 5, 6]]
+arr = np.array(a)
+arr ** 2
+# returns
+# array([[ 1,  4,  9],
+#       [16, 25, 36]])
+
+# Broadcasting only works if btwn two arrays if they have either equal trailing axes
+# or one of the trailing axis is 1
+# trailing axes = counting the axis from the end of the shape
+# create a 2 x 2 array
+arr2 = np.array([[1, 2], [1,2]])
+arr2.shape
+# returns (2, 2)
+arr2
+# returns array([[1, 2],
+#                [1, 2]])
+
 
