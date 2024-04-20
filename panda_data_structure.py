@@ -96,5 +96,51 @@ df[np.logical_not(df["?Vowel"])]
 a = [[1, 2, 3], [4, 5, 6]]
 arr = np.array(a)
 a
+# will be like a matrix with the arrays stacked
+
+# the shape attribute of an ndarray returns a tuple w/ the # of rows and columns
+# returns (2, 3), the 2 is for axis = 0 (vertical/rows) and the 3 is for axis = 1 (horizontal/columns)
+arr.shape
+
+# get maximum value from array
+# default returns maximum from flattened array, meaning as if all values were in one row
+arr.max()
+#returns 6
+
+# to get maximum value along axis=0, will compare values along axis=0 for each column
+# to determine the maximum
+arr.max(axis=0)
+# returns array([4, 5, 6])
+# array looks like:
+# [1, 2, 3]
+# [4, 5, 6], it compares, 1 and 4, 2 and 5, 3 and 6 and then returns the higher value of each comparison
+
+# to get maximum along axis=1
+arr.max(axis=1)
+# returns array([3, 6])
+# in the first row along axis=1, the max is 3
+# in the second row along axis=1, the max is 6
+
+# to get minimum value of flattened ndarray
+arr.min()
+# returns 1, the overall minimum
+
+# to get minima along axis=0
+arr.min(axis=0)
+#returns array([1, 2, 3])
+# work same as max
+
+# mean of flattened ndarray
+arr.mean()
+
+# mean along axis=0
+arr.mean(axis=0)
+# returns array([2.5, 3.5, 4.5])
+# average of 1 and 4, 2 and 5, 3 and 6
+
+# mean along axis=1
+arr.mean(axis=1)
+# returns array([2., 5.])
+# average of first row(x) and average of second row(y)
 
 
