@@ -57,4 +57,22 @@ c = {"A": "Apple", "B": "Banana", "C": "Cantaloupe"}
 df = pd.DataFrame({ "Order": a, "?Vowel": b, "Example of fruit": c})
 df
 
+# access a column by passing a column name to the DataFrame with square brackets
+# only columns can be accessed this way and rows will give you an error
+df["Order"]
+
+# access rows using the .loc method and passing in a row label
+df.loc["A"]
+
+# you can also access rows using .iloc and passing in a row integer location
+df.iloc[0]
+
+# to access all rows for only two columns ( Order and Vowel ), pass a colon as the row
+# index and a list with the column names to the loc method
+df.loc[:, ["Order", "?Vowel"]]
+
+# to access only rows B and C for columns Order and Example of fruit, pass B:C as the
+# row index and a list of the column names as the column index to the loc method
+df.loc["B":"C", ["Order", "Example of fruit"]]
+
 
