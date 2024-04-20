@@ -159,7 +159,7 @@ arr ** 2
 
 # Broadcasting only works if btwn two arrays if they have either equal trailing axes
 # or one of the trailing axis is 1
-# trailing axes = counting the axis from the end of the shape
+# trailing axes = counting the axis from the end of the shape, the y value in (x, y)
 # create a 2 x 2 array
 arr2 = np.array([[1, 2], [1,2]])
 arr2.shape
@@ -167,5 +167,65 @@ arr2.shape
 arr2
 # returns array([[1, 2],
 #                [1, 2]])
+
+# view other array size
+arr.shape
+# returns (2, 3)
+
+# error: add two arrays with incomplatible trailing dimensions
+# will get error because of broadcasting rules
+arr2 + arr
+
+# create a 1 x 3 array ( will be compatible with the (2, 3) array, the last dimension is
+# equal and the first dimension is 1
+arr2 = np.array([[1, 2, 3]])
+arr2.shape
+#returns (1, 3)
+
+# add 2 arrays with compatible trailing dimensions, top row gets added to top row
+arr + arr2
+# returns
+# array([[2, 4, 6],
+#       [5, 7, 9]])
+# arr =
+#       ([[1, 2, 3],
+#       [4, 5, 6]])
+# arr.shape = (2, 3) # 2 rows, 3 columns
+# arr2.shape = (1, 3) #
+# arr2 = array([[1, 2, 3]])
+
+# sometime you need to create an ndarray with a predetermined shape that you will update with values
+# np.zeros() : creates an ndarray of a given shape filled with zeros, the shape is given as a tuple
+# create a 4 x 4 ndarray of zeros
+np.zeros((4, 4))
+# returns
+# array([[0., 0., 0., 0.],
+#        [0., 0., 0., 0.],
+#        [0., 0., 0., 0.],
+#        [0., 0., 0., 0.]])
+
+# create a 4 x 4 ndarray of zero-like values, with data type boolean
+np.zeros((4, 4), dtype=bool)
+
+# array([[False, False, False, False],
+#        [False, False, False, False],
+#        [False, False, False, False],
+#        [False, False, False, False]])
+
+#  create a 4 x 4 ndarray of ones
+np.ones((4, 4))
+# returns
+# array([[1., 1., 1., 1.],
+#        [1., 1., 1., 1.],
+#        [1., 1., 1., 1.],
+#        [1., 1., 1., 1.]])
+
+#create a 4 x 4 ndarray of one-like value
+np.ones((4, 4), dtype=bool)
+# returns
+# array([[ True,  True,  True,  True],
+#        [ True,  True,  True,  True],
+#        [ True,  True,  True,  True],
+#        [ True,  True,  True,  True]])
 
 
