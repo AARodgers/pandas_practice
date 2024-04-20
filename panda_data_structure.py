@@ -75,4 +75,26 @@ df.loc[:, ["Order", "?Vowel"]]
 # row index and a list of the column names as the column index to the loc method
 df.loc["B":"C", ["Order", "Example of fruit"]]
 
+# also can get rows by passing a boolean array to df between square brackets
+# it will return rows with the index corresponding to the index of True values in the
+# boolean
+# Here the 0th index is True and indexes 1 and 2 are False, so it returns a df with only the first row
+df[[True, False, False]]
+
+# get rows where ?Vowel=True
+df[df["?Vowel"]]
+
+# get rows where ?Vowel=False ( using the ~ , the logical NOT operator)
+df[~df["?Vowel"]]
+
+# get rows where ?Vowel=False using the numpy package
+df[np.logical_not(df["?Vowel"])]
+
+# ndarrays: multi-dimensional or n-dimensional array can be constructed using a single
+# integer, array like object or list
+# create an ndarray from a nested list
+a = [[1, 2, 3], [4, 5, 6]]
+arr = np.array(a)
+a
+
 
