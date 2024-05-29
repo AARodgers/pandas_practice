@@ -172,3 +172,35 @@ rows_with_nan = df[df.isnull().any(axis=1)]
 
 print("Rows with any NaN values:")
 print(rows_with_nan)
+
+# To change data types for columns
+# Use astype for changing to common types like int, float, or str.
+# Use pd.to_datetime for converting to datetime.
+# Use astype('category') for converting to categorical types.
+
+import pandas as pd
+
+# Sample DataFrame
+data = {
+    'A': ['1', '2', '3'],
+    'B': ['4.0', '5.1', '6.2'],
+    'C': [7, 8, 9],
+    'Date': ['2023-01-01', '2023-01-02', '2023-01-03'],
+    'Category': ['A', 'B', 'A']
+}
+df = pd.DataFrame(data)
+
+print("Original DataFrame:")
+print(df)
+print(df.dtypes)
+
+# Changing data types
+df['A'] = df['A'].astype(int)
+df['B'] = df['B'].astype(float)
+df['C'] = df['C'].astype(str)
+df['Date'] = pd.to_datetime(df['Date'])
+df['Category'] = df['Category'].astype('category')
+
+print("\nDataFrame after changing data types:")
+print(df)
+print(df.dtypes)
