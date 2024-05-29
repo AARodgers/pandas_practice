@@ -37,26 +37,26 @@ for row in cursor.execute("select * from gta"):
 # print all releases within liberty city
 # city=:c means the column of city id represent by the dictionary key of c
 # where "c": has the value of Liberty City
-print("*******************************")
-cursor.execute("select * from gta where city=:c", {"c": "Liberty City"})
-gta_search = cursor.fetchall()
-print(gta_search)
+# print("*******************************")
+# cursor.execute("select * from gta where city=:c", {"c": "Liberty City"})
+# gta_search = cursor.fetchall()
+# print(gta_search)
 
 # Create another table of fictional city and real city
-cursor.execute("create table cities (gta_city text, real_city text)")
-# only doing 1 row for demonstration so don't need the many part
-cursor.execute("insert into cities values(?, ?)", ("Liberty City", "New York"))
-cursor.execute("select * from cities where gta_city=:c", {"c": "Liberty City"})
-cities_search  = cursor.fetchall()
-print(cities_search)
+# cursor.execute("create table cities (gta_city text, real_city text)")
+# # only doing 1 row for demonstration so don't need the many part
+# cursor.execute("insert into cities values(?, ?)", ("Liberty City", "New York"))
+# cursor.execute("select * from cities where gta_city=:c", {"c": "Liberty City"})
+# cities_search  = cursor.fetchall()
+# print(cities_search)
 
 # manipulate database data (replace all Liberty City's with New York)
 # make dynamic, "New York" is in zero row and column 1 or cities_search[0][1]
 # Liberty City = cities_search[0][0]
-print("**********************")
-for i in gta_search:
-  adjusted = [cities_search[0][1] if value==cities_search[0][0] else value for value in i]
-print(adjusted)
+# print("**********************")
+# for i in gta_search:
+#   adjusted = [cities_search[0][1] if value==cities_search[0][0] else value for value in i]
+# print(adjusted)
 
 connection.close()
 
