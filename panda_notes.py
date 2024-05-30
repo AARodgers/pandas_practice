@@ -204,3 +204,48 @@ df['Category'] = df['Category'].astype('category')
 print("\nDataFrame after changing data types:")
 print(df)
 print(df.dtypes)
+
+
+# Create new df by writing out which columns
+
+import pandas as pd
+
+# Sample DataFrame
+data = {
+    'A': [1, 2, 3],
+    'B': [4, 5, 6],
+    'C': [7, 8, 9],
+    'D': [10, 11, 12]
+}
+df = pd.DataFrame(data)
+
+print("Original DataFrame:")
+print(df)
+
+# Create a new DataFrame with selected columns
+new_df = df[['A', 'C']]
+
+print("\nNew DataFrame with columns 'A' and 'C':")
+print(new_df)
+
+# Create a new DataFrame with selected columns using loc
+new_df = df.loc[:, ['A', 'C']]
+
+print("\nNew DataFrame with columns 'A' and 'C' using loc:")
+print(new_df)
+
+# Create a new DataFrame with selected columns using iloc
+new_df = df.iloc[:, [0, 2]]  # Select columns at positions 0 and 2
+
+print("\nNew DataFrame with columns at positions 0 and 2 using iloc:")
+print(new_df)
+
+# List of columns to select
+columns_to_select = ['A', 'C']
+
+# Create a new DataFrame with selected columns
+new_df = df[columns_to_select]
+
+print("\nNew DataFrame with selected columns from a list:")
+print(new_df)
+
