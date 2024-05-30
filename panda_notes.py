@@ -249,3 +249,34 @@ new_df = df[columns_to_select]
 print("\nNew DataFrame with selected columns from a list:")
 print(new_df)
 
+#### CHANGING THE NAME OF A COLUMN
+
+# Using rename method
+import pandas as pd
+
+# Sample DataFrame
+data = {
+    'A': [1, 2, 3],
+    'B': [4, 5, 6],
+    'C': [7, 8, 9]
+}
+df = pd.DataFrame(data)
+
+print("Original DataFrame:")
+print(df)
+
+# Rename column 'A' to 'Alpha'
+df.rename(columns={'A': 'Alpha'}, inplace=True)
+
+print("\nDataFrame after renaming column 'A' to 'Alpha':")
+print(df)
+
+# Change name of columns using column attribute
+# Change the name of column 'B' to 'Beta'
+df.columns = ['Alpha', 'Beta', 'C']  # Renaming columns directly
+
+print("\nDataFrame after renaming column 'B' to 'Beta' using columns attribute:")
+print(df)
+
+
+
