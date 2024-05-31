@@ -279,4 +279,8 @@ print("\nDataFrame after renaming column 'B' to 'Beta' using columns attribute:"
 print(df)
 
 
+# To get rid of br in WordClouds
 
+#The presence of 'br' in your word cloud likely results from unfiltered HTML tags or line breaks in your text data. The <br> tag is commonly used in HTML to indicate a line break. If your text source contains HTML content, these tags might get included in the word cloud.
+
+#To remove such artifacts, you need to preprocess your text data to strip out HTML tags and other unwanted characters. Here's a step-by-step guide on how to do this:
