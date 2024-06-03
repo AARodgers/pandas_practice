@@ -284,3 +284,32 @@ print(df)
 #The presence of 'br' in your word cloud likely results from unfiltered HTML tags or line breaks in your text data. The <br> tag is commonly used in HTML to indicate a line break. If your text source contains HTML content, these tags might get included in the word cloud.
 
 #To remove such artifacts, you need to preprocess your text data to strip out HTML tags and other unwanted characters. Here's a step-by-step guide on how to do this:
+
+
+# To see the what versions of libraries you are using in Jupyter notebook in a list:
+!pip list
+
+# To see the version of a specific library:
+!pip show pandas
+
+#Most libraries provide a __version__ attribute that you can use to check their version
+import pandas as pd
+print(pd.__version__)
+
+import numpy as np
+print(np.__version__)
+
+import matplotlib
+print(matplotlib.__version__)
+
+import seaborn as sns
+print(sns.__version__)
+
+import sklearn
+print(sklearn.__version__)
+
+import tensorflow as tf
+print(tf.__version__)
+
+import torch
+print(torch.__version__)
