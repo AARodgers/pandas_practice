@@ -313,3 +313,13 @@ print(tf.__version__)
 
 import torch
 print(torch.__version__)
+
+#The pkg_resources module from the setuptools package can be used to get the versions of installed libraries
+# This will print out a list of all installed packages along with their versions.
+import pkg_resources
+for package in pkg_resources.working_set:
+    print(f"{package.key}=={package.version}")
+
+# This will display the list of installed packages and their versions in a format suitable for a requirements.txt file.
+!pip freeze
+
